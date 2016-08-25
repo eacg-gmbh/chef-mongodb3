@@ -14,7 +14,7 @@ supports 'centos', '= 7.2'
 supports 'oracle', '= 6.6'
 supports 'amazon'
 
-# depends 'apt'
+depends 'apt'
 # depends 'yum'
 # depends 'user'
 
