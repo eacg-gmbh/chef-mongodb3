@@ -98,7 +98,7 @@ end
 case node['platform']
   when 'ubuntu'
     if node['platform_version'].to_f >= 15.04
-      cookbook_file '/lib/systemd/system/disable-transparent-hugepages.service' do
+      cookbook_file '/etc/systemd/system/disable-transparent-hugepages.service' do
         source 'disable-transparent-hugepages.service'
         owner 'root'
         group 'root'
@@ -127,7 +127,7 @@ end
 # Create the mongod.service file
 case node['platform']
   when 'ubuntu'
-    template '/lib/systemd/system/mongod.service' do
+    template '/etc/systemd/system/mongod.service' do
       source 'mongod.service.erb'
       mode 0644
       only_if { node['platform_version'].to_f >= 15.04 }
